@@ -1,2 +1,2 @@
-learing phase 
+learning phase 
 
