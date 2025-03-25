@@ -10,24 +10,24 @@ const userSchema = new Schema(
             lowercase: true,
             unique: true,
             trim: true,
-            index: true  //searching field ko optimize kr ta ha
+            index: true, //searching field ko optimize kr ta ha
         },
         email: {
             type: String,
             required: true,
             unique: true,
             lowercase: true,
-            trim: true
+            trim: true,
         },
         fullname: {
             type: String,
             required: true,
             trim: true,
-            index: true
+            index: true,
         },
         avatar: {
             type: String,
-            required: true
+            required: true,
         },
         coverImage: {
             type: String,
@@ -38,7 +38,7 @@ const userSchema = new Schema(
         },
         password: {
             type: String,
-            required: true
+            required: true,
         },
         refreshToken: {
              type: String,
@@ -74,7 +74,7 @@ userSchema.methods.generateAccessToken = function(){
         }
     )
 }
-userSchema.methods.generateRefreshToken = function( ){
+userSchema.methods.generateRefreshToken = function(){
     jwt.sign(
         {
             _id: this._id,
